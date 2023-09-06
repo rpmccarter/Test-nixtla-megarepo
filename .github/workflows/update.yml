@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Configure git
+        run: |
+          git config --global user.name "Mintie Bot"
+          git config --global user.email "aws@mintlify.com"
       - name: Clean repo
         run: rm -rf statsforecast
       - name: Clone first repo
