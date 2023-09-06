@@ -26,7 +26,7 @@ jobs:
         run: git status
       - name: Commit files
         run: |
-          git add statsforecast
+          git add statsforecast/
           git commit -m "update"
       - name: Push files
         run: git push origin main
