@@ -47,20 +47,15 @@ jobs:
       - name: Remove .git folders
         run: rm -rf */.git
 
-      - name: Check for modified files
+      # only runs when changed files are detected
+      - name: Push changes
         run: |
           if git diff-files --quiet; then
-            exit 1
+            echo 'No changes detected, skipping...'
           else
-            exit 0
+            git config user.name "Mintie Bot"
+            git config user.email "aws@mintlify.com"
+            git add .
+            git commit -m "update"
+            git push origin main
           fi
-        continue-on-error: true
-      # only runs when changed files are detected
-      - name: Push files
-        if: success()
-        run: |
-          git config user.name "Mintie Bot"
-          git config user.email "aws@mintlify.com"
-          git add .
-          git commit -m "update"
-          git push origin main
