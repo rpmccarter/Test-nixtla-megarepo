@@ -50,6 +50,9 @@ jobs:
       # only runs when changed files are detected
       - name: Push changes
         run: |
+          git diff
+          git diff-files --quiet
+          echo $?
           if git diff-files --quiet; then
             echo 'No changes detected, skipping...'
           else
