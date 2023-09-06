@@ -41,7 +41,121 @@
       "url": "api-playground"
     }
   ],
-  "navigation": [],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "statsforecast/quickstart",
+        "statsforecast/development"
+      ]
+    },
+    {
+      "group": "Styling",
+      "pages": [
+        "statsforecast/settings/global",
+        "statsforecast/settings/navigation",
+        "statsforecast/settings/custom-styling",
+        "statsforecast/settings/ctas-footers"
+      ],
+      "icon": "pencil"
+    },
+    {
+      "group": "Configurations",
+      "pages": [
+        {
+          "group": "Custom Domain",
+          "pages": [
+            "mlforecast/settings/custom-domain/subdomain",
+            "mlforecast/settings/custom-domain/subdirectory"
+          ]
+        },
+        "mlforecast/settings/seo",
+        "mlforecast/settings/broken-links",
+        "mlforecast/settings/versioning",
+        "mlforecast/settings/add-members"
+      ]
+    },
+    {
+      "group": "Writing Content",
+      "pages": [
+        "mlforecast/content/page",
+        "mlforecast/content/text",
+        "mlforecast/content/image-embeds",
+        "mlforecast/content/list-table",
+        "mlforecast/content/code",
+        "mlforecast/content/reusable-snippets"
+      ]
+    },
+    {
+      "group": "API Playground",
+      "pages": [
+        "neuralforecast/api-playground/configuration",
+        "neuralforecast/api-playground/overview",
+        "neuralforecast/api-playground/authentication",
+        {
+          "group": "OpenAPI Support",
+          "pages": [
+            "neuralforecast/api-playground/openapi",
+            "neuralforecast/api-playground/openapi-generation"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "neuralforecast/integrations/customer-support",
+        {
+          "group": "Analytics",
+          "pages": [
+            "neuralforecast/integrations/analytics/overview",
+            "neuralforecast/integrations/analytics/amplitude",
+            "neuralforecast/integrations/analytics/clearbit",
+            "neuralforecast/integrations/analytics/fathom",
+            "neuralforecast/integrations/analytics/google-analytics",
+            "neuralforecast/integrations/analytics/google-tag-manager",
+            "neuralforecast/integrations/analytics/hotjar",
+            "neuralforecast/integrations/analytics/koala",
+            "neuralforecast/integrations/analytics/logrocket",
+            "neuralforecast/integrations/analytics/mixpanel",
+            "neuralforecast/integrations/analytics/pirsch",
+            "neuralforecast/integrations/analytics/plausible",
+            "neuralforecast/integrations/analytics/posthog"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Organization Components",
+      "pages": [
+        "hierarchicalforecast/content/components/accordion",
+        "hierarchicalforecast/content/components/accordion-group",
+        "hierarchicalforecast/content/components/card",
+        "hierarchicalforecast/content/components/card-group",
+        "hierarchicalforecast/content/components/tabs"
+      ]
+    },
+    {
+      "group": "Context Components",
+      "pages": [
+        "hierarchicalforecast/content/components/callouts",
+        "hierarchicalforecast/content/components/code",
+        "hierarchicalforecast/content/components/code-group",
+        "hierarchicalforecast/content/components/frame",
+        "hierarchicalforecast/content/components/tooltip",
+        "hierarchicalforecast/content/api-components"
+      ]
+    },
+    {
+      "group": "API Components",
+      "pages": [
+        "hierarchicalforecast/api-playground/components/api/param",
+        "hierarchicalforecast/api-playground/components/api/response",
+        "hierarchicalforecast/api-playground/components/api/expandable",
+        "hierarchicalforecast/api-playground/components/api/sticky-examples"
+      ]
+    }
+  ],
   "footerSocials": {
     "github": "https://github.com/mintlify",
     "slack": "https://mintlify.com/community",
