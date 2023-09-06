@@ -22,12 +22,13 @@ jobs:
           path: statsforecast
           repository: 'Nixtla/statsforecast'
           ref: 'gh-pages'
+      - name: Remove .git folder
+        run: rm -rf statsforecast/.git
       - name: Check updated files
         run: git status
       - name: Commit files
         run: |
-          git rm --cached statsforecast
-          git add statsforecast/
+          git add statsforecast
           git commit -m "update"
       - name: Push files
         run: git push origin main
