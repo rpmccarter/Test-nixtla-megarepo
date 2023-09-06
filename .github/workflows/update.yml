@@ -46,10 +46,12 @@ jobs:
 
       - name: Remove .git folders
         run: rm -rf */.git 
-      - name: Push files
+      - name: Setup git
         run: |
           git config user.name "Mintie Bot"
           git config user.email "aws@mintlify.com"
           git add .
-          git commit -m "update"
-          git push origin main
+      # only commit and push if there are staged changes
+      - name: Push files
+        run: |
+          git diff-index --quiet --cached HEAD -- || ( git commit -m "update" && git push origin main )
