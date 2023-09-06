@@ -49,6 +49,7 @@ jobs:
 
       - name: Check for modified files
         run: '! git diff-files --quiet'
+        shell: bash
         continue-on-error: true
       # only runs when changed files are detected
       - name: Push files
