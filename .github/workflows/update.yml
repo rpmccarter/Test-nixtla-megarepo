@@ -5,9 +5,23 @@ on:
   repository_dispatch:
     types: [update]
 
+concurrency:
+  group: update
+  cancel-in-progress: true
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        run: echo Workflow executed!
+      - uses: actions/checkout@v3
+      - name: Clean repo
+        run: rm -rf statsforecast
+      - name: Clone first repo
+        uses: actions/checkout@v3
+        with:
+          path: statsforecast
+          repository: 'Nixtla/statsforecast'
+          ref: 'gh-pages'
+      - name: Check updated files
+        run: git status
+
