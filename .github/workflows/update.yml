@@ -21,21 +21,37 @@ jobs:
           git config --global user.name "Mintie Bot"
           git config --global user.email "aws@mintlify.com"
       - name: Clean repo
-        run: rm -rf statsforecast
-      - name: Clone first repo
+        run: rm -rf statsforecast mlforecast neuralforecast hierarchicalforecast
+
+      - name: Clone statsforecast
         uses: actions/checkout@v3
         with:
           path: statsforecast
           repository: 'Nixtla/statsforecast'
           ref: 'gh-pages'
-      - name: Remove .git folder
-        run: rm -rf statsforecast/.git
-      - name: Check updated files
-        run: git status
-      - name: Commit files
+      - name: Clone mlforecast
+        uses: actions/checkout@v3
+        with:
+          path: mlforecast
+          repository: 'Nixtla/mlforecast'
+          ref: 'gh-pages'
+      - name: Clone neuralforecast
+        uses: actions/checkout@v3
+        with:
+          path: neuralforecast
+          repository: 'Nixtla/neuralforecast'
+          ref: 'gh-pages'
+      - name: Clone hierarchicalforecast
+        uses: actions/checkout@v3
+        with:
+          path: hierarchicalforecast
+          repository: 'Nixtla/hierarchicalforecast'
+          ref: 'gh-pages'
+
+      - name: Remove .git folders
+        run: rm -rf */.git 
+      - name: Push files
         run: |
+          git push origin main
           git add statsforecast
           git commit -m "update"
-      - name: Push files
-        run: git push origin main
-
