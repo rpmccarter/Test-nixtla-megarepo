@@ -26,6 +26,7 @@ jobs:
         run: git status
       - name: Commit files
         run: |
+          git rm --cached statsforecast
           git add statsforecast/
           git commit -m "update"
       - name: Push files
