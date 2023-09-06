@@ -16,10 +16,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.PUSH_TOKEN }}
-      - name: Configure git
-        run: |
-          git config --global user.name "Mintie Bot"
-          git config --global user.email "aws@mintlify.com"
       - name: Clean repo
         run: rm -rf statsforecast mlforecast neuralforecast hierarchicalforecast
 
@@ -52,6 +48,8 @@ jobs:
         run: rm -rf */.git 
       - name: Push files
         run: |
-          git push origin main
-          git add statsforecast
+          git config user.name "Mintie Bot"
+          git config user.email "aws@mintlify.com"
+          git add .
           git commit -m "update"
+          git push origin main
