@@ -1,0 +1,55 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Mintlify",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://mintlify.com"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#2AB673",
+    "light": "#55D799",
+    "dark": "#117866",
+    "anchors": {
+      "from": "#117866",
+      "to": "#2AB673"
+    }
+  },
+  "api": {
+    "auth": {
+      "method": "bearer"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Community",
+      "url": "https://mintlify.com/community"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://mintlify.com/start"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "tabs": [
+    {
+      "name": "API References",
+      "url": "api-playground"
+    }
+  ],
+  "navigation": [],
+  "footerSocials": {
+    "github": "https://github.com/mintlify",
+    "slack": "https://mintlify.com/community",
+    "twitter": "https://twitter.com/mintlify"
+  },
+  "analytics": {
+    "ga4": {
+      "measurementId": "G-RCYWHL7EQ7"
+    }
+  }
+}

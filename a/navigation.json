@@ -1,0 +1,14 @@
+[{
+  "group": "Getting Started",
+  "pages": ["quickstart", "development"]
+},
+{
+  "group": "Styling",
+  "pages": [
+    "settings/global",
+    "settings/navigation",
+    "settings/custom-styling",
+    "settings/ctas-footers"
+  ],
+  "icon": "pencil"
+}]

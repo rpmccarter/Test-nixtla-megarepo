@@ -1,0 +1,32 @@
+[
+  {
+    "group": "Organization Components",
+    "pages": [
+      "content/components/accordion",
+      "content/components/accordion-group",
+      "content/components/card",
+      "content/components/card-group",
+      "content/components/tabs"
+    ]
+  },
+  {
+    "group": "Context Components",
+    "pages": [
+      "content/components/callouts",
+      "content/components/code",
+      "content/components/code-group",
+      "content/components/frame",
+      "content/components/tooltip",
+      "content/api-components"
+    ]
+  },
+  {
+    "group": "API Components",
+    "pages": [
+      "api-playground/components/api/param",
+      "api-playground/components/api/response",
+      "api-playground/components/api/expandable",
+      "api-playground/components/api/sticky-examples"
+    ]
+  }
+]
