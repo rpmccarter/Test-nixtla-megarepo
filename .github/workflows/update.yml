@@ -45,8 +45,14 @@ jobs:
           ref: 'gh-pages'
 
       - name: Remove .git folders
-        run: rm -rf */.git 
+        run: rm -rf */.git
+
+      - name: Check for modified files
+        run: '! git diff-files --quiet'
+        continue-on-error: true
+      # only runs when changed files are detected
       - name: Push files
+        if: success()
         run: |
           git config user.name "Mintie Bot"
           git config user.email "aws@mintlify.com"
