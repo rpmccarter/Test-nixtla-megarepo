@@ -1,6 +1,10 @@
 on:
-  - push
-  - workflow_dispatch
+  push:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  repository_dispatch: 
+      types: [docs_updated]
 
 jobs:
   mintlify_job:
@@ -10,7 +14,7 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
       - name: Run mintlify github action
-        uses: mintlify/mintlify-multirepo-action@v0.6
+        uses: mintlify/mintlify-multirepo-action@v0.7
         with:
           token: ${{ secrets.PUSH_TOKEN }}
           target-branch: docs
