@@ -13,3 +13,5 @@ jobs:
         uses: mintlify/mintlify-multirepo-action@v0.1
         with:
           target-branch: docs
+      - name: test bash
+        run: git status
