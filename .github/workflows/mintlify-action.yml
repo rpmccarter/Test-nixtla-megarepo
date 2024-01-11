@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Run mintlify job
     steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
       - name: Run mintlify github action
         uses: mintlify/mintlify-multirepo-action@v0.1
         with:
