@@ -77,41 +77,41 @@ jobs:
             navigations: [
               {
                 name: "nixtla",
-                groups: .[1]
+                config: .[1]
               },
               {
                 name: "statsforecast",
-                groups: .[2]
+                config: .[2]
               },
               {
                 name: "mlforecast",
-                groups: .[3]
+                config: .[3]
               },
               {
                 name: "neuralforecast",
-                groups: .[4]
+                config: .[4]
               },
               {
                 name: "hierarchicalforecast",
-                groups: .[5]
+                config: .[5]
               },
               {
                 name: "utilsforecast",
-                groups: .[6]
+                config: .[6]
               },
               {
                 name: "datasetsforecast",
-                groups: .[7]
+                config: .[7]
               },
               {
                 name: "coreforecast",
-                groups: .[8]
+                config: .[8]
               }
             ]
           }
           | .navigations |= map(
             .name as $prefix 
-            | .groups |= walk(
+            | .config.navigation |= walk(
               if type == "array" 
                 then map(
                   if type == "string"
@@ -124,10 +124,10 @@ jobs:
             )
           )
           | .config.navigation = (
-            [.navigations[].groups]
+            [.navigations[].config.navigation]
             | add
           ) 
-          | .config' mint.json a/navigation.json b/navigation.json c/navigation.json d/navigation.json > mint-temp.json
+          | .config' mint.json nixtla/mint.json statsforecast/mint.json mlforecast/mint.json neuralforecast/mint.json hierarchicalforecast/mint.json utilsforecast/mint.json datasetsforecast/mint.json coreforecast/mint.json > mint-temp.json
           mv mint-temp.json mint.json
 
       # only runs when changed files are detected
