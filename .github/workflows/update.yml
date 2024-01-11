@@ -52,19 +52,19 @@ jobs:
       - name: Clone utilsforecast
         uses: actions/checkout@v3
         with:
-          path: statsforecast
+          path: utilsforecast
           repository: 'Nixtla/utilsforecast'
           ref: 'docs'
       - name: Clone datasetsforecast
         uses: actions/checkout@v3
         with:
-          path: statsforecast
+          path: datasetsforecast
           repository: 'Nixtla/datasetsforecast'
           ref: 'docs'
       - name: Clone coreforecast
         uses: actions/checkout@v3
         with:
-          path: statsforecast
+          path: coreforecast
           repository: 'Nixtla/coreforecast'
           ref: 'docs'
       - name: Remove .git folders
