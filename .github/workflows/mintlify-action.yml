@@ -21,7 +21,7 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
       - name: Run mintlify github action
-        uses: mintlify/multirepo-action@v0.11
+        uses: mintlify/multirepo-action@v0.12
         with:
           token: ${{ secrets.PUSH_TOKEN }}
           target-branch: docs
