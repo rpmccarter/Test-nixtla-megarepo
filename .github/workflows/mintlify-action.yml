@@ -10,10 +10,32 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
       - name: Run mintlify github action
-        uses: mintlify/mintlify-multirepo-action@v0.1
+        uses: mintlify/mintlify-multirepo-action@v0.2
         with:
+          token: ${{ secrets.PUSH_TOKEN }}
           target-branch: docs
-      - name: test bash
-        run: git status
-      - name: test gh
-        run: gh -v
+          repos: |
+            - owner: Nixtla
+              repo: nixtla
+              ref: docs
+            - owner: Nixtla
+              repo: statsforecast
+              ref: docs
+            - owner: Nixtla
+              repo: mlforecast
+              ref: docs
+            - owner: Nixtla
+              repo: neuralforecast
+              ref: docs
+            - owner: Nixtla
+              repo: hierarchicalforecast
+              ref: docs
+            - owner: Nixtla
+              repo: utilsforecast
+              ref: docs
+            - owner: Nixtla
+              repo: datasetsforecast
+              ref: docs
+            - owner: Nixtla
+              repo: coreforecast
+              ref: docs
