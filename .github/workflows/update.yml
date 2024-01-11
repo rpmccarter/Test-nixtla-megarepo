@@ -19,31 +19,54 @@ jobs:
       - name: Clean repo
         run: rm -rf statsforecast mlforecast neuralforecast hierarchicalforecast
 
+      - name: Clone nixtla
+        uses: actions/checkout@v3
+        with:
+          path: nixtla
+          repository: 'Nixtla/nixtla'
+          ref: 'docs'
       - name: Clone statsforecast
         uses: actions/checkout@v3
         with:
           path: statsforecast
           repository: 'Nixtla/statsforecast'
-          ref: 'gh-pages'
+          ref: 'docs'
       - name: Clone mlforecast
         uses: actions/checkout@v3
         with:
           path: mlforecast
           repository: 'Nixtla/mlforecast'
-          ref: 'gh-pages'
+          ref: 'docs'
       - name: Clone neuralforecast
         uses: actions/checkout@v3
         with:
           path: neuralforecast
           repository: 'Nixtla/neuralforecast'
-          ref: 'gh-pages'
+          ref: 'docs'
       - name: Clone hierarchicalforecast
         uses: actions/checkout@v3
         with:
           path: hierarchicalforecast
           repository: 'Nixtla/hierarchicalforecast'
-          ref: 'gh-pages'
-
+          ref: 'docs'
+      - name: Clone utilsforecast
+        uses: actions/checkout@v3
+        with:
+          path: statsforecast
+          repository: 'Nixtla/utilsforecast'
+          ref: 'docs'
+      - name: Clone datasetsforecast
+        uses: actions/checkout@v3
+        with:
+          path: statsforecast
+          repository: 'Nixtla/datasetsforecast'
+          ref: 'docs'
+      - name: Clone coreforecast
+        uses: actions/checkout@v3
+        with:
+          path: statsforecast
+          repository: 'Nixtla/coreforecast'
+          ref: 'docs'
       - name: Remove .git folders
         run: rm -rf */.git
 
@@ -53,20 +76,36 @@ jobs:
             config: .[0],
             navigations: [
               {
-                name: "statsforecast",
+                name: "nixtla",
                 groups: .[1]
               },
               {
-                name: "mlforecast",
+                name: "statsforecast",
                 groups: .[2]
               },
               {
-                name: "neuralforecast",
+                name: "mlforecast",
                 groups: .[3]
               },
               {
-                name: "hierarchicalforecast",
+                name: "neuralforecast",
                 groups: .[4]
+              },
+              {
+                name: "hierarchicalforecast",
+                groups: .[5]
+              },
+              {
+                name: "utilsforecast",
+                groups: .[6]
+              },
+              {
+                name: "datasetsforecast",
+                groups: .[7]
+              },
+              {
+                name: "coreforecast",
+                groups: .[8]
               }
             ]
           }
