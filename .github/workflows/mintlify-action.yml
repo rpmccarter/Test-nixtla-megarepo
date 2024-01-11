@@ -15,3 +15,5 @@ jobs:
           target-branch: docs
       - name: test bash
         run: git status
+      - name: test gh
+        run: gh -v
