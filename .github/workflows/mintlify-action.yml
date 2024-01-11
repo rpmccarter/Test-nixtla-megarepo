@@ -1,3 +1,5 @@
+name: Mintlify Multirepo Action
+
 on:
   push:
     branches: main
@@ -7,10 +9,14 @@ on:
   repository_dispatch: 
       types: [docs_updated]
 
+concurrency:
+  group: mintlify-multirepo-action
+  cancel-in-progress: true
+
 jobs:
-  mintlify_job:
+  multirepo-action:
     runs-on: ubuntu-latest
-    name: Run mintlify job
+    name: Run mintlify multirepo action
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
@@ -19,7 +25,6 @@ jobs:
         with:
           token: ${{ secrets.PUSH_TOKEN }}
           target-branch: docs
-          force: true
           repos: |
             - owner: nixtla
               repo: nixtla
