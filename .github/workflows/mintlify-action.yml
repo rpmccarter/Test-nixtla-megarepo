@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
+      - name: check git access
+        run: git ls-remote --heads --exit-code origin foo
       - name: Run mintlify github action
         uses: mintlify/multirepo-action@v0.13
         with:
