@@ -20,8 +20,12 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
+      - name: check git access
+        run: git ls-remote --heads --exit-code origin docs
+      - name: check git path
+        run: which git
       - name: Run mintlify github action
-        uses: mintlify/multirepo-action@v0.12
+        uses: mintlify/multirepo-action@v0.15
         with:
           token: ${{ secrets.PUSH_TOKEN }}
           target-branch: docs
