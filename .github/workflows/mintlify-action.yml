@@ -25,7 +25,7 @@ jobs:
       - name: check git path
         run: which git
       - name: Run mintlify github action
-        uses: mintlify/multirepo-action@v0.13
+        uses: mintlify/multirepo-action@v0.14
         with:
           token: ${{ secrets.PUSH_TOKEN }}
           target-branch: docs
