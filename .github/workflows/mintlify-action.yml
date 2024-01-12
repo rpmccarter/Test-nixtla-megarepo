@@ -24,7 +24,7 @@ jobs:
         uses: mintlify/multirepo-action@v0.15
         with:
           token: ${{ secrets.PUSH_TOKEN }}
-          target-branch: foo
+          target-branch: docs
           repos: |
             - owner: nixtla
               repo: nixtla
