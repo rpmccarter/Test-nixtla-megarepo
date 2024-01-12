@@ -20,13 +20,11 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
-      - name: cat git config
-        run: cat .git/config
       - name: Run mintlify github action
         uses: mintlify/multirepo-action@v0.13
         with:
           token: ${{ secrets.PUSH_TOKEN }}
-          target-branch: foo
+          target-branch: docs
           repos: |
             - owner: nixtla
               repo: nixtla
