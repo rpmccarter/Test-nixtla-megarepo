@@ -500,20 +500,6 @@
         "datasetsforecast/phm2008.html",
         "datasetsforecast/utils.html"
       ]
-    },
-    {
-      "group": "",
-      "pages": [
-        "coreforecast/index"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "coreforecast/grouped_array",
-        "coreforecast/lag_transforms",
-        "coreforecast/scalers"
-      ]
     }
   ],
   "footerSocials": {
